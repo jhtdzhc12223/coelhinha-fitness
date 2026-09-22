@@ -1,0 +1,697 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="theme-color"
+        content="#7C1034"
+    >
+
+    <title>Coelhinha - Fitness</title>
+
+    <!-- Fonte -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;1,500;1,600&display=swap"
+        rel="stylesheet"
+    >
+
+    <!-- CSS principal -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <!-- =========================
+         APLICATIVO
+    ========================== -->
+
+    <div id="app">
+
+        <!-- Conteúdo principal -->
+        <main id="main-content">
+
+            <!-- =========================
+                 TELA INICIAL
+            ========================== -->
+
+            <section
+                id="home-screen"
+                class="screen active"
+            >
+
+                <header class="home-header">
+
+                    <div>
+                        <span class="greeting" id="greeting">
+                            Bom dia!
+                        </span>
+
+                        <h1>
+                            Fernanda
+                            <span class="greeting-symbol">✦</span>
+                        </h1>
+                    </div>
+
+                    <div class="profile-decoration">
+                        ♡
+                    </div>
+
+                </header>
+
+
+                <!-- Mensagem principal -->
+
+                <section class="welcome-card">
+
+                    <div class="welcome-decoration">
+                        ✦
+                    </div>
+
+                    <span class="welcome-small">
+                        SEU MOMENTO
+                    </span>
+
+                    <h2>
+                        Pronta para o<br>
+                        treino de hoje?
+                    </h2>
+
+                    <p>
+                        Um treino de cada vez.<br>
+                        Um passo de cada vez.
+                    </p>
+
+                    <button
+                        class="primary-button"
+                        id="start-workout-button"
+                    >
+                        Começar treino
+                        <span>→</span>
+                    </button>
+
+                </section>
+
+
+                <!-- Treino do dia -->
+
+                <section class="section-block">
+
+                    <div class="section-title">
+
+                        <div>
+                            <span class="section-label">
+                                HOJE
+                            </span>
+
+                            <h2>
+                                Treino do dia
+                            </h2>
+                        </div>
+
+                        <span class="flower-decoration">
+                            ✿
+                        </span>
+
+                    </div>
+
+
+                    <article class="workout-card">
+
+                        <div class="workout-card-top">
+
+                            <span class="workout-tag">
+                                TREINO A
+                            </span>
+
+                            <span class="workout-duration">
+                                ~45 min
+                            </span>
+
+                        </div>
+
+                        <h3>
+                            Peito, Ombros<br>
+                            <span>& Tríceps</span>
+                        </h3>
+
+                        <p>
+                            6 exercícios · 17 séries
+                        </p>
+
+                        <button
+                            class="text-button"
+                            data-screen="workouts-screen"
+                        >
+                            Ver treino
+                            <span>→</span>
+                        </button>
+
+                    </article>
+
+                </section>
+
+
+                <!-- Resumo -->
+
+                <section class="stats-grid">
+
+                    <article class="stat-card">
+
+                        <span class="stat-icon">
+                            ♡
+                        </span>
+
+                        <strong id="workout-count">
+                            0
+                        </strong>
+
+                        <span>
+                            treinos
+                        </span>
+
+                    </article>
+
+
+                    <article class="stat-card">
+
+                        <span class="stat-icon">
+                            ✦
+                        </span>
+
+                        <strong>
+                            0
+                        </strong>
+
+                        <span>
+                            conquistas
+                        </span>
+
+                    </article>
+
+                </section>
+
+
+                <!-- Mensagem especial -->
+
+                <section class="special-message">
+
+                    <span>✦</span>
+
+                    <p>
+                        Pequenos passos também<br>
+                        são evolução.
+                    </p>
+
+                    <span>✦</span>
+
+                </section>
+
+            </section>
+
+
+            <!-- =========================
+                 TELA DE TREINOS
+            ========================== -->
+
+            <section
+                id="workouts-screen"
+                class="screen"
+            >
+
+                <header class="page-header">
+
+                    <span class="section-label">
+                        SUA ROTINA
+                    </span>
+
+                    <h1>
+                        Treinos
+                    </h1>
+
+                    <p>
+                        Escolha seu treino e vamos começar.
+                    </p>
+
+                </header>
+
+
+                <div
+                    id="workouts-list"
+                    class="workouts-list"
+                >
+                    <!--
+                        Os treinos serão carregados
+                        automaticamente pelo JavaScript.
+                    -->
+                </div>
+
+            </section>
+
+
+            <!-- =========================
+                 TELA DO TREINO
+            ========================== -->
+
+            <section
+                id="workout-detail-screen"
+                class="screen"
+            >
+
+                <header class="page-header workout-detail-header">
+
+                    <button
+                        class="back-button"
+                        data-screen="workouts-screen"
+                    >
+                        ←
+                    </button>
+
+                    <div>
+
+                        <span
+                            class="section-label"
+                            id="workout-detail-label"
+                        >
+                            TREINO
+                        </span>
+
+                        <h1 id="workout-detail-title">
+                            Treino
+                        </h1>
+
+                    </div>
+
+                </header>
+
+
+                <div
+                    id="exercise-list"
+                    class="exercise-list"
+                >
+                    <!-- Exercícios carregados pelo JS -->
+                </div>
+
+            </section>
+
+
+            <!-- =========================
+                 TELA DE EXERCÍCIO
+            ========================== -->
+
+            <section
+                id="exercise-screen"
+                class="screen"
+            >
+
+                <header class="page-header">
+
+                    <button
+                        class="back-button"
+                        id="exercise-back-button"
+                    >
+                        ←
+                    </button>
+
+                    <span class="section-label">
+                        EXERCÍCIO
+                    </span>
+
+                    <h1 id="exercise-name">
+                        Exercício
+                    </h1>
+
+                    <p id="exercise-description">
+                        Como executar o exercício.
+                    </p>
+
+                </header>
+
+
+                <!-- Informações -->
+
+                <section class="exercise-info-card">
+
+                    <div>
+
+                        <span>
+                            SÉRIES
+                        </span>
+
+                        <strong id="exercise-sets">
+                            3
+                        </strong>
+
+                    </div>
+
+                    <div>
+
+                        <span>
+                            REPETIÇÕES
+                        </span>
+
+                        <strong id="exercise-reps">
+                            10
+                        </strong>
+
+                    </div>
+
+                    <div>
+
+                        <span>
+                            DESCANSO
+                        </span>
+
+                        <strong id="exercise-rest">
+                            03:00
+                        </strong>
+
+                    </div>
+
+                </section>
+
+
+                <!-- Carga -->
+
+                <section class="load-card">
+
+                    <span class="section-label">
+                        CARGA
+                    </span>
+
+                    <div class="load-display">
+
+                        <button
+                            id="decrease-load"
+                            class="load-button"
+                        >
+                            −
+                        </button>
+
+                        <div>
+
+                            <strong id="current-load">
+                                0
+                            </strong>
+
+                            <span>
+                                kg
+                            </span>
+
+                        </div>
+
+                        <button
+                            id="increase-load"
+                            class="load-button"
+                        >
+                            +
+                        </button>
+
+                    </div>
+
+                    <p id="last-load">
+                        Última vez: — kg
+                    </p>
+
+                </section>
+
+
+                <!-- Série -->
+
+                <section class="set-card">
+
+                    <span class="section-label">
+                        SÉRIE ATUAL
+                    </span>
+
+                    <strong id="current-set">
+                        1
+                    </strong>
+
+                    <span>
+                        de
+                    </span>
+
+                    <strong id="total-sets">
+                        3
+                    </strong>
+
+                </section>
+
+
+                <button
+                    id="complete-set-button"
+                    class="primary-button full-width"
+                >
+                    Concluir série
+                    <span>✓</span>
+                </button>
+
+
+                <!-- Cronômetro -->
+
+                <section
+                    id="rest-timer"
+                    class="timer-card hidden"
+                >
+
+                    <span>
+                        DESCANSO
+                    </span>
+
+                    <strong id="timer-display">
+                        03:00
+                    </strong>
+
+                    <button
+                        id="skip-timer"
+                        class="text-button"
+                    >
+                        Pular descanso
+                    </button>
+
+                </section>
+
+            </section>
+
+
+            <!-- =========================
+                 CALENDÁRIO
+            ========================== -->
+
+            <section
+                id="calendar-screen"
+                class="screen"
+            >
+
+                <header class="page-header">
+
+                    <span class="section-label">
+                        SUA ROTINA
+                    </span>
+
+                    <h1>
+                        Calendário
+                    </h1>
+
+                    <p>
+                        Acompanhe seus dias de treino.
+                    </p>
+
+                </header>
+
+                <div
+                    id="calendar"
+                    class="calendar"
+                >
+                    <!-- Calendário será criado pelo JS -->
+                </div>
+
+            </section>
+
+
+            <!-- =========================
+                 EVOLUÇÃO
+            ========================== -->
+
+            <section
+                id="progress-screen"
+                class="screen"
+            >
+
+                <header class="page-header">
+
+                    <span class="section-label">
+                        SUA JORNADA
+                    </span>
+
+                    <h1>
+                        Evolução
+                    </h1>
+
+                    <p>
+                        Veja o quanto você já avançou.
+                    </p>
+
+                </header>
+
+
+                <section class="progress-summary">
+
+                    <article class="progress-card">
+
+                        <span>
+                            TREINOS
+                        </span>
+
+                        <strong id="progress-workouts">
+                            0
+                        </strong>
+
+                    </article>
+
+
+                    <article class="progress-card">
+
+                        <span>
+                            SÉRIES
+                        </span>
+
+                        <strong id="progress-sets">
+                            0
+                        </strong>
+
+                    </article>
+
+                </section>
+
+
+                <section class="achievements-section">
+
+                    <div class="section-title">
+
+                        <div>
+
+                            <span class="section-label">
+                                CONQUISTAS
+                            </span>
+
+                            <h2>
+                                Seus momentos
+                            </h2>
+
+                        </div>
+
+                        <span>
+                            🦋
+                        </span>
+
+                    </div>
+
+
+                    <div
+                        id="achievements-list"
+                        class="achievements-list"
+                    >
+                        <!-- Conquistas carregadas pelo JS -->
+                    </div>
+
+                </section>
+
+            </section>
+
+        </main>
+
+
+        <!-- =========================
+             NAVEGAÇÃO INFERIOR
+        ========================== -->
+
+        <nav class="bottom-navigation">
+
+            <button
+                class="nav-item active"
+                data-screen="home-screen"
+            >
+
+                <span class="nav-icon">
+                    ⌂
+                </span>
+
+                <span>
+                    Início
+                </span>
+
+            </button>
+
+
+            <button
+                class="nav-item"
+                data-screen="workouts-screen"
+            >
+
+                <span class="nav-icon">
+                    ♡
+                </span>
+
+                <span>
+                    Treinos
+                </span>
+
+            </button>
+
+
+            <button
+                class="nav-item"
+                data-screen="calendar-screen"
+            >
+
+                <span class="nav-icon">
+                    □
+                </span>
+
+                <span>
+                    Agenda
+                </span>
+
+            </button>
+
+
+            <button
+                class="nav-item"
+                data-screen="progress-screen"
+            >
+
+                <span class="nav-icon">
+                    ✦
+                </span>
+
+                <span>
+                    Evolução
+                </span>
+
+            </button>
+
+        </nav>
+
+    </div>
+
+
+    <!-- =========================
+         JAVASCRIPT
+    ========================== -->
+
+    <script src="js/treinos.js"></script>
+    <script src="js/storage.js"></script>
+    <script src="js/app.js"></script>
+
+</body>
+</html>

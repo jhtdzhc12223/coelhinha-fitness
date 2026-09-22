@@ -1,0 +1,1122 @@
+/* =========================================
+   COELHINHA FITNESS
+   STYLE.CSS
+========================================= */
+
+
+/* =========================================
+   1. VARIÁVEIS
+========================================= */
+
+:root {
+    --wine: #7C1034;
+    --wine-light: #A61E45;
+    --wine-soft: #F4E6EA;
+
+    --blue: #243B64;
+    --blue-light: #425A85;
+    --blue-soft: #E8EDF5;
+
+    --cream: #FAF8F6;
+    --white: #FFFFFF;
+
+    --text: #24242A;
+    --text-light: #77757B;
+    --border: #ECE7E8;
+
+    --gold: #D9A62E;
+
+    --shadow:
+        0 8px 30px rgba(36, 20, 25, 0.07);
+
+    --radius: 20px;
+}
+
+
+/* =========================================
+   2. RESET
+========================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "DM Sans", sans-serif;
+    background: var(--cream);
+    color: var(--text);
+    min-height: 100vh;
+}
+
+button {
+    font-family: inherit;
+    border: none;
+    cursor: pointer;
+}
+
+button:active {
+    transform: scale(0.97);
+}
+
+
+/* =========================================
+   3. APLICATIVO
+========================================= */
+
+#app {
+    width: 100%;
+    max-width: 520px;
+    min-height: 100vh;
+    margin: 0 auto;
+    background: var(--cream);
+    position: relative;
+    overflow-x: hidden;
+}
+
+#main-content {
+    padding-bottom: 100px;
+}
+
+
+/* =========================================
+   4. TELAS
+========================================= */
+
+.screen {
+    display: none;
+    padding: 28px 20px;
+    animation: screenIn 0.25s ease;
+}
+
+.screen.active {
+    display: block;
+}
+
+@keyframes screenIn {
+    from {
+        opacity: 0;
+        transform: translateY(8px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* =========================================
+   5. CABEÇALHO HOME
+========================================= */
+
+.home-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 26px;
+}
+
+.greeting {
+    display: block;
+    font-size: 13px;
+    color: var(--text-light);
+    margin-bottom: 4px;
+}
+
+.home-header h1 {
+    font-family: "Playfair Display", serif;
+    font-size: 34px;
+    font-weight: 600;
+    color: var(--wine);
+    line-height: 1.1;
+}
+
+.greeting-symbol {
+    color: var(--gold);
+    font-size: 18px;
+}
+
+.profile-decoration {
+    width: 46px;
+    height: 46px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--wine-soft);
+    color: var(--wine);
+    font-size: 23px;
+}
+
+
+/* =========================================
+   6. WELCOME CARD
+========================================= */
+
+.welcome-card {
+    position: relative;
+    overflow: hidden;
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--wine),
+            #64102D
+        );
+
+    color: white;
+    border-radius: 24px;
+    padding: 28px 24px;
+
+    box-shadow:
+        0 14px 35px rgba(124, 16, 52, 0.20);
+
+    margin-bottom: 30px;
+}
+
+.welcome-decoration {
+    position: absolute;
+    top: 18px;
+    right: 22px;
+    color: rgba(255,255,255,0.35);
+    font-size: 25px;
+}
+
+.welcome-small {
+    font-size: 10px;
+    letter-spacing: 2px;
+    opacity: 0.75;
+}
+
+.welcome-card h2 {
+    font-family: "Playfair Display", serif;
+    font-size: 29px;
+    line-height: 1.15;
+    font-weight: 500;
+    margin: 12px 0;
+}
+
+.welcome-card p {
+    font-size: 14px;
+    line-height: 1.5;
+    opacity: 0.85;
+    margin-bottom: 22px;
+}
+
+
+/* =========================================
+   7. BOTÕES
+========================================= */
+
+.primary-button {
+    width: auto;
+    min-height: 48px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+
+    padding: 0 20px;
+
+    border-radius: 14px;
+
+    background: white;
+    color: var(--wine);
+
+    font-size: 14px;
+    font-weight: 700;
+
+    transition:
+        transform 0.2s,
+        box-shadow 0.2s;
+}
+
+.primary-button:hover {
+    box-shadow: 0 7px 20px rgba(0,0,0,0.12);
+}
+
+.primary-button span {
+    font-size: 18px;
+}
+
+.full-width {
+    width: 100%;
+}
+
+.text-button {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    background: transparent;
+    color: var(--wine);
+
+    font-size: 13px;
+    font-weight: 700;
+
+    padding: 0;
+}
+
+.text-button span {
+    font-size: 17px;
+}
+
+.back-button {
+    width: 42px;
+    height: 42px;
+
+    border-radius: 50%;
+
+    background: var(--white);
+    color: var(--wine);
+
+    font-size: 21px;
+
+    box-shadow: var(--shadow);
+
+    margin-bottom: 16px;
+}
+
+
+/* =========================================
+   8. TÍTULOS DE SEÇÃO
+========================================= */
+
+.section-block {
+    margin-bottom: 30px;
+}
+
+.section-title {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    margin-bottom: 15px;
+}
+
+.section-title h2 {
+    font-family: "Playfair Display", serif;
+    font-size: 23px;
+    font-weight: 600;
+    margin-top: 3px;
+}
+
+.section-label {
+    display: block;
+
+    color: var(--wine);
+
+    font-size: 10px;
+    font-weight: 700;
+
+    letter-spacing: 1.7px;
+}
+
+.flower-decoration {
+    color: var(--gold);
+    font-size: 25px;
+}
+
+
+/* =========================================
+   9. CARD DO TREINO
+========================================= */
+
+.workout-card {
+    background: var(--white);
+
+    border: 1px solid var(--border);
+
+    border-radius: var(--radius);
+
+    padding: 21px;
+
+    box-shadow: var(--shadow);
+}
+
+.workout-card-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    margin-bottom: 14px;
+}
+
+.workout-tag {
+    display: inline-flex;
+
+    padding: 6px 10px;
+
+    border-radius: 8px;
+
+    background: var(--wine-soft);
+    color: var(--wine);
+
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.workout-duration {
+    font-size: 12px;
+    color: var(--text-light);
+}
+
+.workout-card h3 {
+    font-family: "Playfair Display", serif;
+    font-size: 23px;
+    line-height: 1.2;
+
+    margin-bottom: 8px;
+}
+
+.workout-card h3 span {
+    color: var(--wine);
+}
+
+.workout-card p {
+    color: var(--text-light);
+    font-size: 13px;
+
+    margin-bottom: 18px;
+}
+
+
+/* =========================================
+   10. ESTATÍSTICAS
+========================================= */
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+
+    margin-bottom: 30px;
+}
+
+.stat-card {
+    background: var(--white);
+
+    border: 1px solid var(--border);
+
+    border-radius: 17px;
+
+    padding: 18px;
+
+    display: flex;
+    flex-direction: column;
+}
+
+.stat-icon {
+    color: var(--wine);
+    font-size: 18px;
+
+    margin-bottom: 8px;
+}
+
+.stat-card strong {
+    font-family: "Playfair Display", serif;
+    color: var(--text);
+
+    font-size: 27px;
+}
+
+.stat-card > span:last-child {
+    color: var(--text-light);
+    font-size: 12px;
+}
+
+
+/* =========================================
+   11. MENSAGEM ESPECIAL
+========================================= */
+
+.special-message {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+
+    text-align: center;
+
+    color: var(--text-light);
+
+    font-family: "Playfair Display", serif;
+    font-style: italic;
+
+    font-size: 14px;
+
+    padding: 12px;
+}
+
+.special-message span {
+    color: var(--gold);
+}
+
+
+/* =========================================
+   12. CABEÇALHO DAS OUTRAS TELAS
+========================================= */
+
+.page-header {
+    margin-bottom: 25px;
+}
+
+.page-header h1 {
+    font-family: "Playfair Display", serif;
+    color: var(--wine);
+
+    font-size: 34px;
+    line-height: 1.1;
+
+    margin: 4px 0 8px;
+}
+
+.page-header p {
+    color: var(--text-light);
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+.workout-detail-header {
+    position: relative;
+}
+
+
+/* =========================================
+   13. LISTA DE TREINOS
+========================================= */
+
+.workouts-list {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.workout-option {
+    width: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    background: var(--white);
+
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+
+    padding: 19px;
+
+    text-align: left;
+
+    box-shadow: var(--shadow);
+
+    transition:
+        transform 0.2s,
+        border-color 0.2s;
+}
+
+.workout-option:hover {
+    transform: translateY(-2px);
+    border-color: var(--wine);
+}
+
+.workout-option-info {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.workout-option-tag {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    color: var(--wine);
+}
+
+.workout-option h3 {
+    font-family: "Playfair Display", serif;
+    font-size: 20px;
+}
+
+.workout-option p {
+    color: var(--text-light);
+    font-size: 12px;
+}
+
+.workout-option-arrow {
+    width: 38px;
+    height: 38px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: var(--wine-soft);
+    color: var(--wine);
+
+    font-size: 19px;
+}
+
+
+/* =========================================
+   14. LISTA DE EXERCÍCIOS
+========================================= */
+
+.exercise-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.exercise-card {
+    background: var(--white);
+
+    border: 1px solid var(--border);
+
+    border-radius: 17px;
+
+    padding: 18px;
+
+    box-shadow: var(--shadow);
+
+    cursor: pointer;
+
+    transition: transform 0.2s;
+}
+
+.exercise-card:hover {
+    transform: translateY(-2px);
+}
+
+.exercise-number {
+    color: var(--wine);
+
+    font-size: 10px;
+    font-weight: 700;
+
+    letter-spacing: 1px;
+}
+
+.exercise-card h3 {
+    font-family: "Playfair Display", serif;
+
+    font-size: 19px;
+
+    margin: 5px 0 10px;
+}
+
+.exercise-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.exercise-meta span {
+    padding: 5px 8px;
+
+    border-radius: 7px;
+
+    background: var(--cream);
+
+    color: var(--text-light);
+
+    font-size: 11px;
+}
+
+
+/* =========================================
+   15. INFORMAÇÕES DO EXERCÍCIO
+========================================= */
+
+.exercise-info-card {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+
+    background: var(--white);
+
+    border: 1px solid var(--border);
+
+    border-radius: var(--radius);
+
+    padding: 18px;
+
+    margin-bottom: 15px;
+
+    box-shadow: var(--shadow);
+}
+
+.exercise-info-card div {
+    display: flex;
+    flex-direction: column;
+
+    text-align: center;
+
+    gap: 5px;
+
+    border-right: 1px solid var(--border);
+}
+
+.exercise-info-card div:last-child {
+    border-right: none;
+}
+
+.exercise-info-card span {
+    color: var(--text-light);
+
+    font-size: 9px;
+    letter-spacing: 1px;
+}
+
+.exercise-info-card strong {
+    color: var(--wine);
+
+    font-family: "Playfair Display", serif;
+    font-size: 22px;
+}
+
+
+/* =========================================
+   16. CARGA
+========================================= */
+
+.load-card {
+    background: var(--white);
+
+    border: 1px solid var(--border);
+
+    border-radius: var(--radius);
+
+    padding: 20px;
+
+    text-align: center;
+
+    margin-bottom: 15px;
+
+    box-shadow: var(--shadow);
+}
+
+.load-display {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 25px;
+
+    margin: 15px 0 8px;
+}
+
+.load-display div {
+    min-width: 90px;
+}
+
+.load-display strong {
+    font-family: "Playfair Display", serif;
+
+    font-size: 42px;
+
+    color: var(--text);
+}
+
+.load-display span {
+    color: var(--text-light);
+}
+
+.load-button {
+    width: 42px;
+    height: 42px;
+
+    border-radius: 50%;
+
+    background: var(--wine-soft);
+
+    color: var(--wine);
+
+    font-size: 24px;
+}
+
+.load-card p {
+    color: var(--text-light);
+    font-size: 11px;
+}
+
+
+/* =========================================
+   17. SÉRIE
+========================================= */
+
+.set-card {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 8px;
+
+    margin: 22px 0;
+
+    color: var(--text-light);
+
+    font-size: 13px;
+}
+
+.set-card .section-label {
+    margin-right: 5px;
+}
+
+.set-card strong {
+    color: var(--wine);
+
+    font-family: "Playfair Display", serif;
+
+    font-size: 25px;
+}
+
+
+/* =========================================
+   18. CRONÔMETRO
+========================================= */
+
+.timer-card {
+    margin-top: 18px;
+
+    padding: 25px;
+
+    text-align: center;
+
+    border-radius: var(--radius);
+
+    background: var(--blue);
+
+    color: white;
+
+    box-shadow: 0 12px 30px rgba(36, 59, 100, 0.18);
+}
+
+.timer-card > span {
+    display: block;
+
+    font-size: 10px;
+    letter-spacing: 2px;
+
+    opacity: 0.7;
+
+    margin-bottom: 8px;
+}
+
+.timer-card strong {
+    display: block;
+
+    font-family: "Playfair Display", serif;
+
+    font-size: 48px;
+
+    margin-bottom: 12px;
+}
+
+.timer-card .text-button {
+    margin: 0 auto;
+    color: white;
+}
+
+
+/* =========================================
+   19. CALENDÁRIO
+========================================= */
+
+.calendar {
+    background: var(--white);
+
+    border: 1px solid var(--border);
+
+    border-radius: var(--radius);
+
+    padding: 18px;
+
+    box-shadow: var(--shadow);
+}
+
+.calendar-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    margin-bottom: 18px;
+}
+
+.calendar-header h2 {
+    font-family: "Playfair Display", serif;
+    font-size: 21px;
+}
+
+.calendar-button {
+    width: 35px;
+    height: 35px;
+
+    border-radius: 50%;
+
+    background: var(--wine-soft);
+    color: var(--wine);
+
+    font-size: 18px;
+}
+
+.calendar-week {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+
+    margin-bottom: 8px;
+}
+
+.calendar-week span {
+    text-align: center;
+
+    color: var(--text-light);
+
+    font-size: 10px;
+    font-weight: 600;
+}
+
+.calendar-days {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+
+    gap: 5px;
+}
+
+.calendar-day {
+    aspect-ratio: 1;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 10px;
+
+    font-size: 12px;
+
+    position: relative;
+}
+
+.calendar-day.today {
+    background: var(--wine);
+    color: white;
+    font-weight: 700;
+}
+
+.calendar-day.training::after {
+    content: "";
+
+    width: 4px;
+    height: 4px;
+
+    border-radius: 50%;
+
+    background: var(--gold);
+
+    position: absolute;
+    bottom: 5px;
+}
+
+
+/* =========================================
+   20. EVOLUÇÃO
+========================================= */
+
+.progress-summary {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+    gap: 12px;
+
+    margin-bottom: 30px;
+}
+
+.progress-card {
+    background: var(--white);
+
+    border: 1px solid var(--border);
+
+    border-radius: var(--radius);
+
+    padding: 22px;
+
+    box-shadow: var(--shadow);
+}
+
+.progress-card span {
+    display: block;
+
+    color: var(--text-light);
+
+    font-size: 10px;
+    letter-spacing: 1.5px;
+
+    margin-bottom: 7px;
+}
+
+.progress-card strong {
+    font-family: "Playfair Display", serif;
+
+    font-size: 32px;
+
+    color: var(--wine);
+}
+
+
+/* =========================================
+   21. CONQUISTAS
+========================================= */
+
+.achievements-section {
+    margin-top: 10px;
+}
+
+.achievements-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.achievement-card {
+    display: flex;
+    align-items: center;
+
+    gap: 14px;
+
+    background: var(--white);
+
+    border: 1px solid var(--border);
+
+    border-radius: 15px;
+
+    padding: 15px;
+
+    box-shadow: var(--shadow);
+}
+
+.achievement-icon {
+    width: 43px;
+    height: 43px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 12px;
+
+    background: var(--wine-soft);
+
+    font-size: 19px;
+}
+
+.achievement-card h3 {
+    font-size: 14px;
+    margin-bottom: 3px;
+}
+
+.achievement-card p {
+    color: var(--text-light);
+    font-size: 11px;
+}
+
+
+/* =========================================
+   22. NAVEGAÇÃO INFERIOR
+========================================= */
+
+.bottom-navigation {
+    position: fixed;
+
+    bottom: 0;
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    width: min(520px, 100%);
+
+    height: 78px;
+
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+
+    background: rgba(255,255,255,0.95);
+
+    backdrop-filter: blur(15px);
+
+    border-top: 1px solid var(--border);
+
+    z-index: 100;
+}
+
+.nav-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    gap: 5px;
+
+    background: transparent;
+
+    color: #9B979A;
+
+    font-size: 10px;
+    font-weight: 600;
+
+    transition: color 0.2s;
+}
+
+.nav-icon {
+    font-size: 19px;
+}
+
+.nav-item.active {
+    color: var(--wine);
+}
+
+
+/* =========================================
+   23. UTILITÁRIOS
+========================================= */
+
+.hidden {
+    display: none !important;
+}
+
+
+/* =========================================
+   24. DESKTOP
+========================================= */
+
+@media (min-width: 700px) {
+
+    body {
+        padding: 25px 0;
+        background: #EEEAE8;
+    }
+
+    #app {
+        min-height: calc(100vh - 50px);
+
+        border-radius: 30px;
+
+        box-shadow:
+            0 20px 60px rgba(0,0,0,0.10);
+    }
+
+    .bottom-navigation {
+        bottom: 25px;
+
+        border-bottom-left-radius: 30px;
+        border-bottom-right-radius: 30px;
+    }
+}
